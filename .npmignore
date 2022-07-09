@@ -30,3 +30,4 @@ gulpfile.esm.js
 example.jpg
 notify.js
 style.css
+!/dist
