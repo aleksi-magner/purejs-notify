@@ -1,10 +1,10 @@
 {
   "name": "purejs-notify",
   "author": "Aleksey Magner",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Lightweight pure JS notify plugin.",
   "license": "MIT",
-  "main": "dist/index.min.js",
+  "main": "dist/notify.min.js",
   "scripts": {
     "deploy": "git push && git push --tags && npm publish",
     "patch": "gulp && git add . && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
