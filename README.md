@@ -1,4 +1,4 @@
-# Notify plugin
+# Pure JS notify plugin
 
 ## Installing
 
