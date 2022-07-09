@@ -3,13 +3,13 @@
 ## Installing
 
 ```shell
-npm i notify
+npm i purejs-notify
 ```
 
 or
 
 ```shell
-yarn add notify
+yarn add purejs-notify
 ```
 
 ## Options
