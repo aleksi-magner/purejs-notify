@@ -1,15 +1,15 @@
 {
   "name": "notify",
   "author": "Aleksi Magner",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight notify plugin.",
   "license": "MIT",
   "main": "dist/index.min.js",
   "scripts": {
     "deploy": "git push && git push --tags && npm publish",
-    "patch": "git add . && gulp && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
-    "minor": "git add . && gulp && npm version minor --force -m 'Upgrade to %s' && npm run deploy",
-    "major": "git add . && gulp && npm version major --force -m 'Upgrade to %s' && npm run deploy",
+    "patch": "gulp && git add . && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
+    "minor": "gulp && git add . && npm version minor --force -m 'Upgrade to %s' && npm run deploy",
+    "major": "gulp && git add . && npm version major --force -m 'Upgrade to %s' && npm run deploy",
     "test": "exit 0"
   },
   "devDependencies": {
