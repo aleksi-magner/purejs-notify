@@ -28,6 +28,5 @@ gulpfile.esm.js
 .gitignore
 .prettierrc.js
 example.jpg
-package.json
-index.js
+notify.js
 style.css

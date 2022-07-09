@@ -115,7 +115,7 @@ $warning('Warning message');
 $error('Error message');
 ```
 
-![](https://github.com/aleksi-magner/icons/blob/master/example.jpg)
+![](https://github.com/aleksi-magner/notify/blob/master/example.jpg)
 
 ## Good Boy License
 

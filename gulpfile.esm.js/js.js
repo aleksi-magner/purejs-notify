@@ -6,7 +6,7 @@ import terser from 'gulp-terser';
 import rename from 'gulp-rename';
 
 const js = () =>
-  src('index.js')
+  src('notify.js')
     .pipe(plumber())
     .pipe(init())
     .pipe(

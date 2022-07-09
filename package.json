@@ -1,10 +1,10 @@
 {
   "name": "notify",
   "author": "Aleksi Magner",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Lightweight notify plugin.",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "deploy": "git push && git push --tags && npm publish",
     "patch": "git add . && gulp && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
