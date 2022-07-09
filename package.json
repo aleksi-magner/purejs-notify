@@ -1,7 +1,7 @@
 {
   "name": "notify",
-  "author": "Aleksi Magner",
-  "version": "1.1.0",
+  "author": "Aleksey Magner",
+  "version": "1.2.0",
   "description": "Lightweight notify plugin.",
   "license": "MIT",
   "main": "dist/index.min.js",
