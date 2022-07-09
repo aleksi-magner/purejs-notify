@@ -78,9 +78,9 @@ By default, only basic styles and padding are set, without affecting the differe
 
 ```javascript
 // app/config/notify.js
-import { init } from 'notify';
+import { init } from 'purejs-notify';
 // Include the core styling file
-import 'notify/style.min.css';
+import 'purejs-notify/style.min.css';
 
 init({
   state: {
@@ -106,7 +106,7 @@ import './config/notify';
 ## Usage
 
 ```javascript
-import { $message, $success, $info, $warning, $error } from 'notify';
+import { $message, $success, $info, $warning, $error } from 'purejs-notify';
 
 $message('Simple message');
 $success('Success message');
