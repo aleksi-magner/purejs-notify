@@ -21,6 +21,15 @@ yarn add purejs-notify
 
 Main CSS class used for styling.
 
+### additionalClasses
+
+* Type: String
+* Default: ''
+
+Additional CSS classes used for styling. Are added to the root element of each notification.
+
+Example classes for styling: `class-1 class-2 class-3`.
+
 ### duration
 
 * Type: Number
@@ -79,13 +88,15 @@ By default, only basic styles and padding are set, without affecting the differe
 ```javascript
 // app/config/notify.js
 import { init } from 'purejs-notify';
+
 // Include the core styling file
 import 'purejs-notify/style.min.css';
 
 init({
+  class: 'my-notify',
+  additionalClasses: 'class-1 class-2 class-3',
+  duration: 5000,
   state: {
-    class: 'my-notify',
-    duration: 5000,
     success: 'success',
     info: 'info',
     warning: 'warning',

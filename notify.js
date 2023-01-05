@@ -41,8 +41,9 @@ class Notify {
   render({ message, state, icon }) {
     const newMessages = document.createElement('div');
     const notifyClass = this.options.class;
+    const additionalClasses = this.options.additionalClasses.split(' ').filter(Boolean);
 
-    newMessages.classList.add(notifyClass);
+    newMessages.classList.add(notifyClass, ...additionalClasses);
 
     if (state) {
       newMessages.classList.add(`${notifyClass}--${state}`);
@@ -81,6 +82,7 @@ let $error = () => {};
 const init = options => {
   const notify = new Notify({
     class: options?.class || 'notify',
+    additionalClasses: options?.additionalClasses || '',
     duration: options?.duration || 6000,
   });
 
