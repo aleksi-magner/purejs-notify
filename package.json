@@ -1,32 +1,41 @@
 {
   "name": "purejs-notify",
-  "author": "Aleksey Magner",
-  "version": "1.10.2",
+  "version": "1.11.0",
   "description": "Lightweight pure JS notify plugin.",
+  "author": "Aleksey Magner",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:aleksi-magner/purejs-notify.git"
+    "url": "git+ssh://git@github.com:aleksi-magner/purejs-notify.git"
   },
-  "main": "dist/notify.min.js",
+  "bugs": {
+    "url": "https://github.com/aleksi-magner/purejs-notify/issues"
+  },
+  "homepage": "https://github.com/aleksi-magner/purejs-notify#readme",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "gulp && git add .",
     "deploy": "git push && git push --tags && npm publish",
-    "patch": "gulp && git add . && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
-    "minor": "gulp && git add . && npm version minor --force -m 'Upgrade to %s' && npm run deploy",
-    "major": "gulp && git add . && npm version major --force -m 'Upgrade to %s' && npm run deploy",
-    "test": "exit 0"
+    "patch": "npm run build && npm version patch --force -m 'Upgrade to %s' && npm run deploy",
+    "minor": "npm run build && npm version minor --force -m 'Upgrade to %s' && npm run deploy",
+    "major": "npm run build && npm version major --force -m 'Upgrade to %s' && npm run deploy"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-terser": "^2.1.0",
-    "prettier": "^2.8.4"
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4"
   }
 }

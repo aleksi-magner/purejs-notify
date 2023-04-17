@@ -1,6 +1,6 @@
 root = true
 
-[*.{js,vue,html,css,yml}]
+[*.{js,ts,vue,html,css,yml,json}]
 charset = utf-8
 indent_style = space
 indent_size = 2
@@ -10,5 +10,5 @@ insert_final_newline = false
 max_line_length = 100
 
 [*.md]
-indent_style = tab
-indent_size = 4
+indent_style = space
+indent_size = 2
