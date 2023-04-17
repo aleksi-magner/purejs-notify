@@ -90,7 +90,7 @@ By default, only basic styles and padding are set, without affecting the differe
 import { init } from 'purejs-notify';
 
 // Include the core styling file
-import 'purejs-notify/style.min.css';
+import 'purejs-notify/dist/style.css';
 
 init({
   class: 'my-notify',
