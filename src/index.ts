@@ -12,54 +12,49 @@ type MessageOptions = {
 
 class Notify {
   options: NotifyOptions;
-  notificationWrap: HTMLDivElement | null;
-  count: number;
-  shownMessages: number[];
+  wrapper: HTMLDivElement | null;
   timerID: number | undefined;
+  timers: number[];
 
   constructor(options: NotifyOptions) {
     this.options = options;
-    this.notificationWrap = null;
-    this.count = 0;
-    this.shownMessages = [];
+    this.wrapper = null;
     this.timerID = undefined;
+    this.timers = [];
   }
 
-  show(element: HTMLDivElement): void {
-    if (!this.notificationWrap) {
-      this.notificationWrap = document.createElement('div');
+  show(node: HTMLDivElement): void {
+    if (!this.wrapper) {
+      this.wrapper = document.createElement('div');
 
-      this.notificationWrap.classList.add(`${this.options.class}-wrap`);
+      this.wrapper.classList.add(`${this.options.class}-wrap`);
 
-      document.body.insertAdjacentElement(<InsertPosition>'afterBegin', this.notificationWrap);
+      document.body.insertAdjacentElement(<InsertPosition>'afterBegin', this.wrapper);
     }
 
-    this.notificationWrap.insertAdjacentElement(<InsertPosition>'afterBegin', element);
+    this.wrapper.insertAdjacentElement(<InsertPosition>'afterBegin', node);
   }
 
-  hide(element: HTMLDivElement): void {
-    element.style.opacity = '0';
+  hide(node: HTMLDivElement, timerID: number): void {
+    node.style.opacity = '0';
 
     const whenTransitionEnd = (): void => {
-      (<HTMLDivElement>element.parentElement).removeChild(element);
+      (<HTMLDivElement>node.parentElement).removeChild(node);
 
-      element.removeEventListener('transitionend', whenTransitionEnd);
+      clearTimeout(timerID);
 
-      this.shownMessages = this.shownMessages.filter(
-        (number: number): boolean => number !== this.count,
-      );
+      this.timers = this.timers.filter((id: number): boolean => id !== timerID);
 
-      this.count -= 1;
+      node.removeEventListener('transitionend', whenTransitionEnd);
 
-      if (!this.shownMessages.length && this.notificationWrap) {
-        document.body.removeChild(this.notificationWrap);
+      if (!this.timers.length && this.wrapper) {
+        document.body.removeChild(this.wrapper);
 
-        this.notificationWrap = null;
-        this.count = 0;
+        this.wrapper = null;
       }
     };
 
-    element.addEventListener('transitionend', whenTransitionEnd);
+    node.addEventListener('transitionend', whenTransitionEnd);
   }
 
   render({ message, state, icon }: MessageOptions): void {
@@ -84,17 +79,15 @@ class Notify {
       newMessages.textContent = message;
     }
 
-    this.count += 1;
-
-    this.shownMessages.push(this.count);
-
     this.show(newMessages);
 
-    clearTimeout(this.timerID);
+    const { timerID = 1 } = this;
 
     this.timerID = setTimeout((): void => {
-      this.hide(newMessages);
+      this.hide(newMessages, timerID);
     }, duration);
+
+    this.timers.push(this.timerID);
   }
 }
 
