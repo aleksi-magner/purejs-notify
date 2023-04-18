@@ -147,8 +147,8 @@ const init = (options: InitOptions): void => {
 
     notify.render(<MessageOptions>{
       message,
-      state: state?.success || '',
-      icon: icons?.success || '',
+      state: state?.success,
+      icon: icons?.success,
     });
   };
 
@@ -161,8 +161,8 @@ const init = (options: InitOptions): void => {
 
     notify.render(<MessageOptions>{
       message,
-      state: state?.info || '',
-      icon: icons?.info || '',
+      state: state?.info,
+      icon: icons?.info,
     });
   };
 
@@ -175,8 +175,8 @@ const init = (options: InitOptions): void => {
 
     notify.render(<MessageOptions>{
       message,
-      state: state?.warning || '',
-      icon: icons?.warning || '',
+      state: state?.warning,
+      icon: icons?.warning,
     });
   };
 
@@ -189,8 +189,8 @@ const init = (options: InitOptions): void => {
 
     notify.render(<MessageOptions>{
       message,
-      state: state?.error || '',
-      icon: icons?.error || '',
+      state: state?.error,
+      icon: icons?.error,
     });
   };
 };
