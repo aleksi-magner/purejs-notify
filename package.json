@@ -26,8 +26,8 @@
     "major": "npm run build && npm version major --force -m 'Upgrade to %s' && npm run deploy"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -35,7 +35,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-plumber": "^1.2.1",
     "gulp-typescript": "^6.0.0-alpha.1",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   }
 }

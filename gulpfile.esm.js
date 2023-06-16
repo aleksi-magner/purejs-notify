@@ -10,8 +10,8 @@ const ts = () =>
     .pipe(plumber())
     .pipe(
       tsc({
-        target: 'ES6',
-        lib: ['ES6', 'DOM', 'DOM.Iterable'],
+        target: 'ES2017',
+        lib: ['ES2017', 'DOM', 'DOM.Iterable'],
         declaration: true,
       }),
     )
