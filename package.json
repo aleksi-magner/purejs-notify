@@ -1,6 +1,6 @@
 {
   "name": "purejs-notify",
-  "version": "1.11.3",
+  "version": "1.12.0",
   "description": "Lightweight pure JS notify plugin.",
   "author": "Aleksey Magner",
   "license": "MIT",
