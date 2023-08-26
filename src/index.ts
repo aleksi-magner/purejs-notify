@@ -16,7 +16,7 @@ type NotifyOptions = {
   };
 };
 
-type InitOptions = {
+export type InitOptions = {
   [Property in keyof NotifyOptions]?: NotifyOptions[Property];
 };
 
@@ -72,7 +72,7 @@ const hide = (node: HTMLDivElement, timer: number): void => {
   const whenTransitionEnd = (): void => {
     (<HTMLDivElement>node.parentElement).removeChild(node);
 
-    clearTimeout(timer);
+    window.clearTimeout(timer);
 
     timers = timers.filter((id: number): boolean => id !== timer);
 
@@ -114,9 +114,9 @@ const render = (message: string, type?: messageType): void => {
 
   show(newMessages);
 
-  const temporaryTimer: number = timerID || 1;
+  const temporaryTimer: number = timerID ?? 1;
 
-  timerID = setTimeout((): void => {
+  timerID = window.setTimeout((): void => {
     hide(newMessages, temporaryTimer);
   }, duration);
 

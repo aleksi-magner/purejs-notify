@@ -4,16 +4,16 @@
     /* Modules */
     "rootDir": "src",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
 
     /* Language and Environment */
-    "target": "ES2017",
-    "lib": ["ES2017", "DOM", "DOM.Iterable"],
+    "target": "ES2018",
+    "lib": ["ES2018", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
 
     /* Emit */
     "outDir": "dist",
-    "noEmit": true,
+    "noEmit": false,
 
     /* Completeness */
     "skipLibCheck": true,
